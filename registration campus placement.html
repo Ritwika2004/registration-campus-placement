@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration Form - KIIT Central Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #marquee {
+            background-color: green;
+            color: white;
+            font-size: 20px;
+            padding: 10px;
+        }
+        form {
+            width: 60%;
+            margin: 0 auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+        .form-section {
+            margin-bottom: 20px;
+        }
+        .form-section label {
+            display: inline-block;
+            width: 200px;
+            font-weight: bold;
+        }
+        .form-section input[type="text"], .form-section input[type="email"], .form-section input[type="password"], .form-section textarea, .form-section select {
+            width: 70%;
+            padding: 8px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .form-section textarea {
+            height: 100px;
+        }
+        .form-section input[type="radio"] {
+            margin-right: 10px;
+        }
+        .form-section input[type="submit"] {
+            padding: 10px 20px;
+            background-color: green;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-section input[type="submit"]:hover {
+            background-color: darkgreen;
+        }
+        #kiit-logo {
+            width: 50px;
+            height: 50px;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center; font-weight: bold; text-decoration: underline;">KIIT Central Library <img id="kiit-logo" src="https://kiit.ac.in/downloads/kiit-logo.png" alt="KIIT Logo"></h1>
+    
+    <div id="marquee">
+        <marquee behavior="scroll" direction="left">Student Registration Form</marquee>
+    </div>
+
+    <form onsubmit="return showAlert();">
+        <fieldset>
+            <legend style="font-weight: bold;">Student Details</legend>
+
+            <div class="form-section">
+                <label for="first-name"><b>First Name:</b></label>
+                <input type="text" id="first-name" name="first-name" required>
+                <label for="middle-name"><b>Middle Name:</b></label>
+                <input type="text" id="middle-name" name="middle-name" required>
+                <label for="last-name"><b>Last Name:</b></label>
+                <input type="text" id="last-name" name="last-name" required>
+            </div>
+
+            <div class="form-section">
+                <label for="email"><i>Email:</i></label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-section">
+                <label for="password"><i>Password:</i></label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="form-section">
+                <label for="confirm-password"><i>Confirm your password:</i></label>
+                <input type="password" id="confirm-password" name="confirm-password" required>
+            </div>
+
+            <div class="form-section">
+                <label for="gender"><b>Gender:</b></label>
+                <input type="radio" id="male" name="gender" value="Male" required>
+                <label for="male">Male</label>
+                <input type="radio" id="female" name="gender" value="Female" required>
+                <label for="female">Female</label>
+                <input type="radio" id="other" name="gender" value="Other" required>
+                <label for="other">Other</label>
+            </div>
+
+            <div class="form-section">
+                <label for="correspondence-address"><b>Enter your Correspondence Address:</b></label>
+                <textarea id="correspondence-address" name="correspondence-address" required>Correspondence Address</textarea>
+            </div>
+
+            <div class="form-section">
+                <label for="permanent-address"><b>Enter your Permanent Address:</b></label>
+                <textarea id="permanent-address" name="permanent-address" required>Permanent Address</textarea>
+            </div>
+
+            <div class="form-section">
+                <label for="domicile"><strong>Domicile:</strong></label>
+                <select id="domicile" name="domicile" required>
+                    <optgroup label="East">
+                        <option value="Odisha">Odisha</option>
+                        <option value="West Bengal">West Bengal</option>
+                        <option value="Jharkhand">Jharkhand</option>
+                    </optgroup>
+                    <optgroup label="West">
+                        <option value="Bihar">Bihar</option>
+                        <option value="Maharashtra">Maharashtra</option>
+                        <option value="Gujarat">Gujarat</option>
+                    </optgroup>
+                    <optgroup label="North">
+                        <option value="Uttar Pradesh">Uttar Pradesh</option>
+                        <option value="Punjab">Punjab</option>
+                        <option value="Haryana">Haryana</option>
+                    </optgroup>
+                    <optgroup label="South">
+                        <option value="Andhra Pradesh">Andhra Pradesh</option>
+                        <option value="Telangana">Telangana</option>
+                    </optgroup>
+                </select>
+            </div>
+
+            <div class="form-section">
+                <input type="submit" value="Sign up">
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        function showAlert() {
+            var firstName = document.getElementById('first-name').value;
+            var middleName = document.getElementById('middle-name').value;
+            var lastName = document.getElementById('last-name').value;
+            var email = document.getElementById('email').value;
+            var address = document.getElementById('correspondence-address').value;
+
+            alert("Full Name: " + firstName + " " + middleName + " " + lastName + "\n" +
+                  "User Email: " + email + "\n" +
+                  "Student Address: " + address);
+
+            return false; // Prevent form submission for demonstration
+        }
+    </script>
+</body>
+</html>
